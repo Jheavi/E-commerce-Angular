@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import images from "../constants/images";
 
 @Component({
   selector: 'app-pre-header',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pre-header.component.scss']
 })
 export class PreHeaderComponent implements OnInit {
+
+  logo = images.logo
 
   constructor() { }
 
