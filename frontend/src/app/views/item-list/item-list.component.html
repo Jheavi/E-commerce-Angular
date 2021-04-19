@@ -1,5 +1,5 @@
 <ul class="item-list">
   <li *ngFor="let item of items$ | async">
-    {{ item.name }}
+    <app-item-list-detail [item]="item"></app-item-list-detail>
   </li>
 </ul>
