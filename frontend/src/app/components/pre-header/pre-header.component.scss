@@ -1,12 +1,14 @@
+@import "../../../margins", "../../../colors";
+
 .pre-header {
   width: 100%;
-  height: 40px;
+  height: $header-height;
   background-color: #edeff1;
-  color: #0063bd;
+  color: $main-letter-color;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: fixed;
+  position: absolute;
   font-family: "Solomon-sans";
   padding: 0px 15px;
 
