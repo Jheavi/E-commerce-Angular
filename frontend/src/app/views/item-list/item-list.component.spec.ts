@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreHeaderComponent } from './pre-header.component';
+import { ItemListComponent } from './item-list.component';
 
-describe('PreHeaderComponent', () => {
-  let component: PreHeaderComponent;
-  let fixture: ComponentFixture<PreHeaderComponent>;
+describe('ItemListComponent', () => {
+  let component: ItemListComponent;
+  let fixture: ComponentFixture<ItemListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PreHeaderComponent ]
+      declarations: [ ItemListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PreHeaderComponent);
+    fixture = TestBed.createComponent(ItemListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
