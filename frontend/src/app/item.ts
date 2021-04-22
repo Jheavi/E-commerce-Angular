@@ -12,7 +12,7 @@ export interface Item {
   name: string
   type: string
   images: string[]
-  gender: string
+  gender: 'unisex' | 'home' | 'dona'
   brand: string
   colors: string[] | null
   sizes: Size[] | null
