@@ -35,4 +35,11 @@ export class ItemsService {
         catchError(this.handleError('getItems', []))
       )
   }
+
+  getItem (productName: string, isFixedName: boolean = false): Observable<Item> {
+    return this.http.get<Item>(`${this.serverUrl}/${productName}?isFixedName=${isFixedName}`)
+      .pipe(
+        catchError(this.handleError<Item>('getItem'))
+      )
+  }
 }
