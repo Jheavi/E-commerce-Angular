@@ -37,21 +37,21 @@ function itemsMongoController() {
     }
   }
 
-  async function getByIdMethod(req, res) {
+  async function getByNameMethod(req, res) {
     try {
-      const { itemId } = req.params;
-      const query = { id: itemId };
+      const { productName } = req.params;
+      const query = { name: productName, 'fixed-name': productName };
 
-      const items = await itemModel.findOne(query);
+      const item = await itemModel.findOne(query);
 
-      res.send(items);
+      res.send(item);
     } catch (error) {
       res.send(error);
     }
   }
 
   return {
-    getMethod, postMethod, deleteMethod, getByIdMethod,
+    getMethod, postMethod, deleteMethod, getByNameMethod,
   };
 }
 

@@ -11,7 +11,7 @@ function itemsRouter() {
     .delete(itemsMongo.deleteMethod);
 
   router.route('/:itemId')
-    .get(itemsMongo.getByIdMethod);
+    .get(itemsMongo.getByNameMethod);
 
   return router;
 }
