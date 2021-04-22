@@ -9,6 +9,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.3s border-bottom;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 3px solid $main-letter-color;
+  }
 
   .discount {
     color: $main-red;
