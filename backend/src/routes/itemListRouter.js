@@ -10,7 +10,7 @@ function itemsRouter() {
     .post(itemsMongo.postMethod)
     .delete(itemsMongo.deleteMethod);
 
-  router.route('/:itemId')
+  router.route('/:productName')
     .get(itemsMongo.getByNameMethod);
 
   return router;

@@ -40,7 +40,7 @@ function itemsMongoController() {
   async function getByNameMethod(req, res) {
     try {
       const { productName } = req.params;
-      const { isFixedName } = req.query;
+      const isFixedName = JSON.parse(req.query.isFixedName);
       const query = isFixedName ? { 'fixed-name': productName } : { name: productName };
 
       const item = await itemModel.findOne(query);
