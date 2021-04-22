@@ -1,0 +1,104 @@
+@import "../../styles/colors";
+
+.route-title-container {
+  width: 100%;
+  padding: 15px;
+  background-color: $main-letter-color;
+
+  h5 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+.images-info-container {
+  display: flex;
+
+  .images {
+    width: 60%;
+    display: flex;
+
+    .small-images {
+      li {
+        height: 120px;
+        margin: 10px 15px;
+        cursor: pointer;
+        border: 1px solid $lightgray;
+
+        img {
+          height: 90%;
+          margin: 5px 0;
+        }
+      }
+    }
+
+    & > img {
+      object-fit: contain;
+      width: 70%;
+    }
+  }
+
+  .info {
+    width: 40%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .actual-price {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 15px 10px 0;
+    }
+
+    .original-price-offer {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+
+      .original-price {
+        margin-right: 15px;
+      }
+
+      .small-price {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .discount {
+      position: relative;
+      color: $main-red;
+      background-color: #f3f3f3;
+      width: 65px;
+
+      .red-line {
+        width: 3px;
+        height: 100%;
+        background-color: $main-red;
+        position: absolute;
+      }
+
+      span {
+        padding: 8px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .shipping-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: $main-red;
+
+    span {
+      margin: 3px 0;
+    }
+  }
+}

@@ -1,1 +1,49 @@
-<p>detail works!</p>
+<div *ngIf="item" class="details-container">
+  <div class="route-title-container">
+    <h5>Viladomat > {{ item.type | firstupper }}</h5>
+  </div>
+  <div class="images-info-container">
+    <div class="images">
+      <ul class="small-images">
+        <li *ngFor="let image of item.images" (click)="selectImage(image)">
+          <img src="{{ image }}" alt="{{ image }}" />
+        </li>
+      </ul>
+      <img
+        src="{{ selectedImage ? selectedImage : item.images[0] }}"
+        alt="{{ item.name }}"
+      />
+    </div>
+    <div class="info">
+      <span class="name">
+        {{ item.type | firstupper }}
+        {{ item.brand + " " + item.name | uppercase }}
+      </span>
+      <div class="original-price-offer">
+        <span
+          class="original-price"
+          [ngClass]="{ 'small-price strikethrough': !!item['actual-price'] }"
+        >
+          {{ item["original-price"] }}€
+        </span>
+        <div class="discount" *ngIf="item['actual-price']">
+          <div class="red-line"></div>
+          <span>-{{ discount }}%</span>
+        </div>
+      </div>
+      <span *ngIf="item['actual-price']" class="actual-price red-letter">
+        {{ item["actual-price"] }}€
+      </span>
+      <div class="shipping-info">
+        <span
+          ><span class="lightbold">Gènere:</span>
+          {{ item.gender | firstupper }}</span
+        >
+        <span>Enviament gratuït (UE) a partir de 60 €</span>
+        <span>Impostos inclosos</span>
+        <span>Preu article per : Andorra</span>
+        <span>Despeses d'enviament Andorra: 5,95 €</span>
+      </div>
+    </div>
+  </div>
+</div>
