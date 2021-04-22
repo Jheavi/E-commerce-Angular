@@ -123,9 +123,13 @@
       font-weight: bold;
       font-size: 16px;
     }
+  }
+}
 
-    .red-price {
-      color: $main-red;
+@media screen and (min-width: 1200px) {
+  .item-list-detail-container {
+    .prices {
+      width: 80%;
     }
   }
 }
