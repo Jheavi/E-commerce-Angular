@@ -40,7 +40,15 @@
       {{ item["original-price"] }}€
     </span>
   </div>
-  <span>{{ item.type | firstupper }}</span>
-  <span>{{ item.brand | firstupper }}</span>
-  <span>{{ item.name | firstupper }}</span>
+  <div class="text-center">
+    <div class="text">
+      <span>{{ item.type | firstupper }}</span>
+    </div>
+    <div class="text">
+      <span>{{ item.brand | firstupper }}</span>
+    </div>
+    <div class="text">
+      <span>{{ item.name | firstupper }}</span>
+    </div>
+  </div>
 </div>
