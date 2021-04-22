@@ -10,9 +10,15 @@ export class ItemListDetailComponent implements OnInit {
 
   @Input() item!: Item
 
+  itemNameWithHiphens: string | undefined
+
+
   constructor() { }
 
   ngOnInit(): void {
+    this.itemNameWithHiphens = this.item['fixed-name']
+    ? this.item['fixed-name'].replace(/ /g, '-')
+    : this.item.name.replace(/ /g, '-')
   }
 
 }
