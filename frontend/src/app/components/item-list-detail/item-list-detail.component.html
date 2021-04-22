@@ -3,7 +3,44 @@
     <div class="red-line"></div>
     <span>OFERTA</span>
   </div>
-  <mat-icon aria-hidden="false" aria-label="Example home icon">
-    gender_1
-  </mat-icon>
+  <div class="gender-icon-container">
+    <div
+      class="minor-container"
+      [ngClass]="{
+        'minor-container-male': item.gender === 'home',
+        'minor-container-female': item.gender === 'dona'
+      }"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        class="gender"
+        [ngClass]="{
+          unisex: item.gender === 'unisex',
+          male: item.gender === 'home',
+          female: item.gender === 'dona'
+        }"
+      >
+        wc
+      </mat-icon>
+    </div>
+  </div>
+  <div class="img-container">
+    <img src="{{ item.images[0] }}" alt="{{ item.name }}" />
+  </div>
+  <div class="prices">
+    <span
+      *ngIf="item['actual-price']"
+      class="price"
+      [ngClass]="{ 'red-price': item['actual-price'] }"
+    >
+      {{ item["actual-price"] }}€
+    </span>
+    <span class="price" [ngClass]="{ strikethrough: item['actual-price'] }">
+      {{ item["original-price"] }}€
+    </span>
+  </div>
+  <span>{{ item.type | firstupper }}</span>
+  <span>{{ item.brand | firstupper }}</span>
+  <span>{{ item.name | firstupper }}</span>
 </div>
