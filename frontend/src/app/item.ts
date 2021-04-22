@@ -10,6 +10,7 @@ interface Fixing {
 
 export interface Item {
   name: string
+  'fixed-name'?: string
   type: string
   images: string[]
   gender: 'unisex' | 'home' | 'dona'
