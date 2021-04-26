@@ -1,9 +1,9 @@
-interface Size {
+export interface Size {
   size: string
   available: boolean
 }
 
-interface Fixing {
+export interface Fixing {
   number: number
   available: boolean
 }
