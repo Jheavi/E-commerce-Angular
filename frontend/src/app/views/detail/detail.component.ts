@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { computed, observable } from 'mobx-angular';
+import { CartitemsService } from 'src/app/cartitems.service';
 import { Item,Size } from 'src/app/item';
 import { ItemsService } from 'src/app/items.service';
 
@@ -40,6 +41,7 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private itemsService: ItemsService,
+    private cartItemsService: CartitemsService,
     private route: ActivatedRoute
   ) { }
 
@@ -56,4 +58,7 @@ export class DetailComponent implements OnInit {
     })
   }
 
+  addItemToCart(item: Item): void {
+    this.cartItemsService.addItemToCart(item)
+  }
 }
