@@ -21,10 +21,12 @@
 
     .small-images {
       li {
-        height: 120px;
-        margin: 10px 15px;
-        cursor: pointer;
-        border: 1px solid $lightgray;
+        .img-square {
+          height: 120px;
+          margin: 10px 15px;
+          cursor: pointer;
+          border: 1px solid $lightgray;
+        }
 
         img {
           height: 90%;
@@ -63,6 +65,8 @@
 
       .original-price {
         margin-right: 15px;
+        font-weight: bold;
+        font-size: 20px;
       }
 
       .small-price {
@@ -87,6 +91,51 @@
       span {
         padding: 8px;
         font-size: 16px;
+      }
+    }
+
+    .sizes-container {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+
+      .sizes {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          .rectangle {
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+            width: 120px;
+            height: 30px;
+            border: 1px solid $lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .rectangle-unavailable {
+            background-color: $lightgray;
+            color: gray;
+            cursor: default;
+          }
+        }
+      }
+    }
+
+    .buy-button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: #ff8800cc;
+      color: #ffffff;
+      padding: 10px;
+
+      &:hover {
+        font-weight: bold;
+        background-color: #ff8800;
+        font-size: 13px;
       }
     }
   }
