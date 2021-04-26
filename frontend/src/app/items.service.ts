@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from "rxjs/operators";
 import { Observable, of, Subject } from 'rxjs';
 import { Item } from './item';
@@ -10,10 +10,6 @@ import { Item } from './item';
 export class ItemsService {
 
   private serverUrl = 'http://localhost:2130'
-
-  private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
 
   items$ = new Subject<Item[]>()
 
