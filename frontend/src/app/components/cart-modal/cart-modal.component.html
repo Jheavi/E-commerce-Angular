@@ -1,0 +1,23 @@
+<div
+  class="modal-container"
+  [ngStyle]="{
+    display: modalVisibility.visible ? 'flex' : 'none',
+    'z-index': modalVisibility.visible ? '10' : '-10'
+  }"
+>
+  <div class="modal-background" (click)="closeModal()"></div>
+  <div class="modal-items">
+    <div class="items-header">
+      <button class="close-modal-button" (click)="closeModal()">X</button>
+      <span>CARRET</span>
+    </div>
+    <div class="items-container">
+      <!-- <ul>
+        <li *ngFor="let cartItem of cartItems$ | async">
+          {{ cartItem.product.name }}
+        </li>
+      </ul> -->
+      <button class="orange-button">TRAMITAR COMANDA</button>
+    </div>
+  </div>
+</div>
