@@ -123,21 +123,6 @@
         }
       }
     }
-
-    .buy-button {
-      border: none;
-      outline: none;
-      cursor: pointer;
-      background-color: #ff8800cc;
-      color: #ffffff;
-      padding: 10px;
-
-      &:hover {
-        font-weight: bold;
-        background-color: #ff8800;
-        font-size: 13px;
-      }
-    }
   }
 
   .shipping-info {

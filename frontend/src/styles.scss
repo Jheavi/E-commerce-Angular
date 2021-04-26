@@ -51,3 +51,18 @@ main {
 .blue-border {
   border: 2px solid $main-letter-color !important;
 }
+
+.orange-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ff8800cc;
+  color: #ffffff;
+  padding: 10px;
+
+  &:hover {
+    font-weight: bold;
+    background-color: #ff8800;
+    font-size: 13px;
+  }
+}
