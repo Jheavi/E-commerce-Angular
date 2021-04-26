@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartitemsService } from 'src/app/cartitems.service';
 import images from "../../constants/images";
 
 @Component({
@@ -10,9 +11,13 @@ export class PreHeaderComponent implements OnInit {
 
   logo = images.logo
 
-  constructor() { }
+  constructor(private cartItemService: CartitemsService) { }
 
   ngOnInit(): void {
+  }
+
+  openCartModal(): void {
+    this.cartItemService.toggleModalVisibility(true)
   }
 
 }
