@@ -14,9 +14,9 @@ function shoppingCarController() {
 
   async function patchMethod(req, res) {
     try {
-      const { item, quantity } = req.body;
+      const { item } = req.body;
       const query = { product: item._id };
-      const update = { $inc: { quantity } };
+      const update = { $inc: 1 };
 
       const updatedItem = await cartItemSchema.findOneAndUpdate(
         query,
