@@ -11,6 +11,8 @@ import { ItemListComponent } from './views/item-list/item-list.component';
 import { ItemListDetailComponent } from './components/item-list-detail/item-list-detail.component';
 import { FirstupperPipe } from './pipes/firstupper.pipe';
 import { DetailComponent } from './views/detail/detail.component';
+import { CartModalComponent } from './components/cart-modal/cart-modal.component';
+import { CartItemDetailComponent } from './components/cart-item-detail/cart-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DetailComponent } from './views/detail/detail.component';
     ItemListComponent,
     ItemListDetailComponent,
     FirstupperPipe,
-    DetailComponent
+    DetailComponent,
+    CartModalComponent,
+    CartItemDetailComponent
   ],
   imports: [
     BrowserModule,
