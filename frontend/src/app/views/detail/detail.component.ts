@@ -59,6 +59,6 @@ export class DetailComponent implements OnInit {
   }
 
   addItemToCart(item: Item): void {
-    this.cartItemsService.addItemToCart(item)
+    this.cartItemsService.addItemToCart(item).subscribe()
   }
 }

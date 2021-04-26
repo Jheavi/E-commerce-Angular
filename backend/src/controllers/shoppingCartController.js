@@ -16,7 +16,7 @@ function shoppingCarController() {
     try {
       const { item } = req.body;
       const query = { product: item._id };
-      const update = { $inc: 1 };
+      const update = { $inc: { quantity: 1 } };
 
       const updatedItem = await cartItemSchema.findOneAndUpdate(
         query,
