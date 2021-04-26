@@ -47,3 +47,7 @@ main {
 .lightbold {
   font-weight: 500;
 }
+
+.blue-border {
+  border: 2px solid $main-letter-color !important;
+}
