@@ -15,12 +15,24 @@
 
   .cart-button {
     display: flex;
+    flex-direction: column;
     align-items: center;
     cursor: pointer;
     border: none;
     outline: none;
     background-color: transparent;
     color: inherit;
+
+    .product-quantity {
+      width: 15px;
+      height: 15px;
+      background-color: $main-letter-color;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .group {
