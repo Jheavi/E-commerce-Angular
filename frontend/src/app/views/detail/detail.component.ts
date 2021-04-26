@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { computed, observable } from 'mobx-angular';
-import { Item } from 'src/app/item';
+import { Item,Size } from 'src/app/item';
 import { ItemsService } from 'src/app/items.service';
 
 @Component({
@@ -14,6 +14,8 @@ export class DetailComponent implements OnInit {
   productName: string = ''
   isFixedName: boolean = false
   selectedImage: string = ''
+  selectedSize: Size = { size: '0', available: false}
+
 
 
   @computed get discount(): number {
@@ -22,8 +24,18 @@ export class DetailComponent implements OnInit {
     : 0
   }
 
-  selectImage(image: string) {
+  selectImage(image: string): void {
     this.selectedImage = image
+  }
+
+  selectSize(size: Size): void {
+    if (size.available) {
+      this.selectedSize = size
+    }
+  }
+
+  findSizeAvailable(itemSize: Size): boolean {
+    return itemSize.available
   }
 
   constructor(

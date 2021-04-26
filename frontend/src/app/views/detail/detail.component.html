@@ -5,8 +5,18 @@
   <div class="images-info-container">
     <div class="images">
       <ul class="small-images">
-        <li *ngFor="let image of item.images" (click)="selectImage(image)">
-          <img src="{{ image }}" alt="{{ image }}" />
+        <li *ngFor="let image of item.images">
+          <div
+            class="img-square"
+            (click)="selectImage(image)"
+            [ngClass]="{
+              'blue-border': selectedImage
+                ? image === selectedImage
+                : image === item.images[0]
+            }"
+          >
+            <img src="{{ image }}" alt="{{ image }}" />
+          </div>
         </li>
       </ul>
       <img
@@ -44,6 +54,27 @@
         <span>Preu article per : Andorra</span>
         <span>Despeses d'enviament Andorra: 5,95 €</span>
       </div>
+      <div class="sizes-container" *ngIf="item.sizes">
+        <span class="lightbold">Talles: </span>
+        <ul class="sizes">
+          <li *ngFor="let size of item.sizes">
+            <div
+              class="rectangle"
+              [ngClass]="{
+                'rectangle-unavailable': !size.available,
+                'blue-border':
+                  selectedSize.size === '0'
+                    ? size.size === item.sizes.find(findSizeAvailable)?.size
+                    : size.size === selectedSize.size
+              }"
+              (click)="selectSize(size)"
+            >
+              <span>{{ size.size }}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button class="buy-button">AFEGIR AL CARRET</button>
     </div>
   </div>
 </div>
