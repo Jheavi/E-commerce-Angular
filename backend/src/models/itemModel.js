@@ -6,13 +6,19 @@ const itemSchema = new Schema({
   'actual-price': String || null,
   brand: String,
   colors: [String] || null,
-  fixings: [String] || null,
+  fixings: [{
+    number: Number,
+    available: Boolean,
+  }] || null,
   'fixed-name': String || undefined,
   gender: String,
   images: [String],
   name: String,
   'original-price': String,
-  sizes: [String] || null,
+  sizes: [{
+    size: String,
+    available: Boolean,
+  }] || null,
   type: String,
 });
 
